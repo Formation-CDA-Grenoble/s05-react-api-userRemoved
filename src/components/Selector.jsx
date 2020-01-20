@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 //list déroulante 
+
 class Selector extends Component {
-    render = () => {
+    
+    
+        state = {
+            currentType: 'films',
+            currentId: 1,  
+        }; 
+
+        setId = (event) => {
+            console.log(event.target.value) 
+            this.setState ({currendId: event.target.value})
+        }
         
-     
-        return (
+        render = () => {return (
 
             <form>
                 
@@ -14,7 +24,7 @@ class Selector extends Component {
                 <option value="people">Spider</option>
                
             </select>
-                <input type="number"/>
+                <input type="number" defaultValue = {1} onChange = {this.setId}/>
                 <input type="submit"/>
                 
             </form>
