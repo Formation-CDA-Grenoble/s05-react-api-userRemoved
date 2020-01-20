@@ -1,7 +1,9 @@
+// g
+
 import React, { Component } from 'react';
 import Axios from 'axios';
 import Loader from 'react-loader-spinner';
-import { Character, Planet } from '../components';
+import { Character, Planet, Films } from '../components';
 
 export default class Container extends Component {
   state = {
@@ -21,11 +23,14 @@ export default class Container extends Component {
     const { type } = this.props;
     const { data } = this.state;
 
+    // si rajoute un truc ici rajouter un composant + dans app.jsx + dans container.jsx + 
     switch (type) {
       case 'people':
         return <Character {...data} />;
       case 'planets':
         return <Planet {...data} />;
+      case 'films':
+        return <Films {...data} />;
       default:
         return null;
     }
